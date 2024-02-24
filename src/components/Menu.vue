@@ -1,5 +1,5 @@
 <template>
-  <div class="rows">
+  <div  class="rows">
    <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">Sorcerer Gang</a>
@@ -9,13 +9,13 @@
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <router-link to="/">Main</router-link>
+          <router-link class="nav-link" to="/">Main</router-link>
         </li>
         <li class="nav-item">
-          <router-link to="/hiring">Hirin</router-link>
+          <router-link class="nav-link" to="/hiring">Hirin</router-link>
         </li>
         <li class="nav-item">
-          <router-link to="/">Idk</router-link>
+          <router-link class="nav-link" to="/liststaff">Idk</router-link>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -45,18 +45,5 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h3 {
-  margin: 40px 0 0;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
+
 </style>
