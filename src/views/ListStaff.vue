@@ -2,8 +2,11 @@
   <div class="rows">
   <h1>goated</h1>
   <div v-for="cat in staff" :key="cat.nickname" >
-    <JobCard />
-    {{cat.nickname}}
+    <JobCard :nickname="cat.nickname"
+    :age="cat.age"
+    :startDate= "cat.dateStartJob" 
+    v-on:delete="deleteCat"
+    />
   </div>
 
   </div>
@@ -21,6 +24,11 @@ export default {
     staff(){
       return this.$store.getters.getAllJob;
     }
+    },
+    methods:{
+      deleteCat(e){
+        this.$store.commit('deleteCatName', e)
+      }
     }
   }
   

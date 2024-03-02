@@ -4,10 +4,14 @@
 <div>
     <div class="card" style="width: 18rem;">
       <div class="card-body">
-       <h5 class="card-title">Card title</h5>
-       <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-       <a href="#" class="btn btn-secondary">Change</a>
-       <a href="#" class="btn btn-danger">Delet</a>
+       <h5 class="card-title">{{ nickname }}</h5>
+       <p class="card-text">
+        I am {{ age }} years old <br />
+        Hiring on {{ startDate }}
+       </p>
+       <router-link class="nav-link" to="{ name: 'edit', params:{nic: nickname} }">hi</router-link>
+       <button v-on:click="deleteCat" type="button" class="btn btn-danger">delt</button>
+   
       </div>
     </div>
 </div>
@@ -19,6 +23,20 @@
 // @ is an alias to /src
 
 export default {
-  name: 'JobCard'
+  name: 'JobCard',
+  emits:['delete', 'edit'],
+  props:{
+    nickname: '',
+    age : '',
+    startDate : ''
+  },
+  methods:{
+    deleteCat(){
+      this.$emit('delete', this.$props.nickname)
+    },
+    editCat(){
+      this.$emit('edit', this.$props.nickname)
+    }
+  }
 }
 </script>
