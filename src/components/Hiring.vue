@@ -36,8 +36,11 @@ export default {
   methods:{
     addJob(){
       this.$store.commit('addWorker', {...this.staff})
-      this.staff = !this.staff
+      this.staff = new Cat()
     }
+  },
+  mounted(){
+    this.staff.id = new Date().getTime();
   }
 }
 </script>

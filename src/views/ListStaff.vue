@@ -1,11 +1,13 @@
 <template>
   <div class="rows">
   <h1>goated</h1>
-  <div v-for="cat in staff" :key="cat.nickname" >
-    <JobCard :nickname="cat.nickname"
+  <div v-for="cat in staff" :key="cat.id" >
+    <JobCard :id="cat.id"
     :age="cat.age"
     :startDate= "cat.dateStartJob" 
-    v-on:delete="deleteCat"
+   :street="cat.street" v-on:delete="deleteCat"
+   :username="cat.username"
+   :name="cat.name"
     />
   </div>
 

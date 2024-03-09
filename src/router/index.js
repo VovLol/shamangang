@@ -22,7 +22,7 @@ const routes = [
       component: ListStaff
     },
     {
-      path: '/edit/init',
+      path: '/edit/:id',
       name: 'edit',
       props: true,
       component: JobEdit

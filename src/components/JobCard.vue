@@ -7,9 +7,10 @@
        <h5 class="card-title">{{ nickname }}</h5>
        <p class="card-text">
         I am {{ age }} years old <br />
-        Hiring on {{ startDate }}
+        Hiring on {{ startDate }} <br />
+        Gonna work on {{ street }}
        </p>
-       <router-link class="nav-link" to="{ name: 'edit', params:{nic: nickname} }">hi</router-link>
+       <router-link class="btn btn-danger"  :to="{ name: 'edit', params:{id: id} }">redact</router-link>
        <button v-on:click="deleteCat" type="button" class="btn btn-danger">delt</button>
    
       </div>
@@ -26,13 +27,16 @@ export default {
   name: 'JobCard',
   emits:['delete', 'edit'],
   props:{
+    username: '',
+    id: '',
     nickname: '',
     age : '',
-    startDate : ''
+    startDate : '',
+    street: '',
   },
   methods:{
     deleteCat(){
-      this.$emit('delete', this.$props.nickname)
+      this.$emit('delete', this.$props.id)
     },
     editCat(){
       this.$emit('edit', this.$props.nickname)
