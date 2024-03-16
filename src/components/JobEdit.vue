@@ -1,6 +1,6 @@
 <template>
   <div class="rows">
-  <h1>redact yo shit mr.{{ nickname }}</h1>
+  <h1>redact yo shit mr. {{ id }}</h1>
     <div>
      <div class="mb-3">
      <label for="CatName" class="form-label">Name</label>
@@ -25,7 +25,8 @@ import Cat from '@/lib/sorcerer.js'
 export default {
   name: 'Hiring',
   props: {
-    id: ''
+    id: '',
+    nickname: ''
   },
   data(){
     return{
